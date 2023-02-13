@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @Author: Xinyue Cao
+ * @Date: 2023-02-10 06:32:52
+ * @LastEditTime: 2023-02-13 09:43:58
+ * @LastEditors: Xinyue Cao
+ */
 let cards = []
 let sum = 0
 let hasBlackJack = false
@@ -26,12 +33,22 @@ function getRandomCard() {
 }
 
 function startGame() {
-    isAlive = true
-    hasBlackJack = false
-    cards = [getRandomCard(), getRandomCard()]
-    sum = cards[0] + cards[1]
-    player.chips -=5
-    renderGame()
+    if (player.chips>=5){
+        isAlive = true
+        hasBlackJack = false
+        cards = [getRandomCard(), getRandomCard()]
+        sum = cards[0] + cards[1]
+        player.chips -=5
+        renderGame()
+    }
+    else {
+        lose()
+    }
+}
+function lose(){
+    cardsEl.textContent = ""
+    sumEl.textContent = ""
+    messageEl.textContent = "YOU LOSE!!"
 
 }
 
