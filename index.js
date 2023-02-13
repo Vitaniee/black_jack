@@ -9,7 +9,7 @@ let sumEl = document.getElementById("sum-el")
 let cardsEl = document.getElementById("cards-el")
 let playerEl = document.getElementById("player-el")
 let player = {
-    name: "Vitanie",
+    name: "Your Chips",
     chips: INI
 }
 playerEl.textContent = player.name + ": $"+player.chips
